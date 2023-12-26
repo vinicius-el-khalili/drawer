@@ -1,0 +1,1 @@
+export type MouseType = [number,number]
