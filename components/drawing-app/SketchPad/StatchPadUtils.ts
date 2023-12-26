@@ -12,7 +12,6 @@ export const getMouse = (
         Math.round(e.clientX - rect.left),
         Math.round(e.clientY - rect.top)
     ]
-    console.log(mouse,rect)
     return mouse
 }
 
@@ -25,14 +24,15 @@ const draw = {
         color: string = "black"
     ) => {
         canvasContext.strokeStyle = color
-        canvasContext.lineWidth = 2
+        canvasContext.lineWidth = 1
         canvasContext.beginPath()
         canvasContext.moveTo(...path[0])
         for (let i=1;i<path.length;i++){
             canvasContext.lineTo(...path[i])
         }
+        canvasContext.lineCap="round"
+        canvasContext.lineJoin="round"
         canvasContext.stroke()
-        console.log(path)
     }
 }
 

@@ -32,15 +32,15 @@ const SkatchPad = () => {
     <>
 
         <canvas
+        width={400}
+        height={400}
         ref={canvasRef}
         className={style.canvas}
         onMouseDown={mouseDown}
         onMouseMove={mouseMove}
         onMouseUp={mouseUp}
-        >
-
-        </canvas>
-
+        />
+        
     </>
     );
 }
