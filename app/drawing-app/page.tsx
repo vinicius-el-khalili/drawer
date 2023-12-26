@@ -7,7 +7,6 @@ const DrawingAppPage = () => {
 
     return (
     <div className={style.DrawingPage}>
-        <h1>Data Creation</h1>
         <SkatchPad/>
     </div>
     );

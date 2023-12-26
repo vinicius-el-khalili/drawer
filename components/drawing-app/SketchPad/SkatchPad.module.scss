@@ -1,8 +1,7 @@
 .canvas {
     background-color: white;
-    width: 80vw;
-    height: 80vw;
-    $maxWidth: 400px;
-    max-width: $maxWidth;
-    max-height: $maxWidth;
+    $size: 400px;
+    width:  $size;
+    height: $size;
+    border: 1px solid black;
 }

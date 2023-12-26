@@ -2,7 +2,7 @@
 import { MouseEventHandler, MouseEvent, useRef, useState } from "react";
 import style from "./SkatchPad.module.scss"
 import { MouseType } from "@/types/drawing-app/types";
-import { getMouse } from "./StatchPadUtils";
+import { getMouse, redraw } from "./StatchPadUtils";
 
 const SkatchPad = () => {
 
@@ -18,10 +18,10 @@ const SkatchPad = () => {
     }
 
     const mouseMove = (e:MouseEvent<HTMLCanvasElement>) => {
-        if(!canvasRef.current){ return }
-        if(!drawing){ return }
+        if(!drawing||!canvasRef.current){ return }
         const mouse = getMouse(e,canvasRef.current)
         setPath( prevPath => [...prevPath, mouse] )
+        redraw(canvasRef.current,path)
     }
 
     const mouseUp = (e:MouseEvent<HTMLCanvasElement>) =>{
